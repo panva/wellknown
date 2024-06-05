@@ -55,6 +55,7 @@ jobs:
         run: node update.mjs ${{ matrix.name }}
 
       - uses: gr2m/create-or-update-pull-request-action@v1
+        id: open-pr
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -62,6 +63,19 @@ jobs:
           title: Update issuers/${{ matrix.name }}
           body:
           branch: update-issuers/${{ matrix.name }}
-          commit-message: Update issuers/${{ matrix.name }}
-          auto-merge: squash
           update-pull-request-title-and-body: false
+      - run: gh pr merge --auto --squash ${{ steps.open-pr.outputs.pull-request-number }}
+      - name: Check PR status
+        timeout-minutes: 1
+        run: |
+          while true;
+          do
+              if [
+                  [$(gh pr view ${{ steps.open-pr.outputs.pull-request-number }}) == * "MERGED" * ]
+              ];
+          then
+          break
+          else
+              sleep 5
+          fi
+          done
