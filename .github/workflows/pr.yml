@@ -1,4 +1,4 @@
-name: Update
+name: NPM Release
 
 on:
   pull_request:
@@ -6,8 +6,8 @@ on:
     types: [auto_merge_enabled]
 
 jobs:
-  get-issuers:
-    name: Get Issuers
+  release:
+    name: NPM Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
