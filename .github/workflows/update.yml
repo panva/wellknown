@@ -68,7 +68,7 @@ jobs:
           path: issuers
           merge-multiple: true
 
-      - uses: gr2m/create-or-update-pull-request-action@v1
+      - uses: panva/create-or-update-pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
