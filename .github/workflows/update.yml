@@ -1,0 +1,89 @@
+name: Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  get-issuers:
+    name: Get Issuers
+    runs-on: ubuntu-latest
+    outputs:
+      names: ${{ steps.collect.outputs.names }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Collect issuers
+        id: collect
+        run: |
+          echo "names=$(node -e 'import("./lookup.mjs").then(({ default: issuers }) => console.log(JSON.stringify(issuers.map(i => i.name))))')" >> "$GITHUB_OUTPUT"
+
+  prs:
+    name: Update ${{ matrix.name }}
+    needs:
+      - get-issuers
+
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    strategy:
+      max-parallel: 1
+      matrix:
+        name: ${{ fromJSON(needs.get-issuers.outputs.names) }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run update script
+        run: node update.mjs ${{ matrix.name }}
+
+      - uses: gr2m/create-or-update-pull-request-action@v1
+        id: open-pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: issuers/${{ matrix.name }}
+          title: Update issuers/${{ matrix.name }}
+          body:
+          branch: update-issuers/${{ matrix.name }}
+          update-pull-request-title-and-body: false
+          commit-message: Update issuers/${{ matrix.name }}
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+
+      - run: gh pr merge --auto --squash ${{ steps.open-pr.outputs.pull-request-number }}
+        if: ${{ steps.open-pr.outputs.pull-request-number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check PR status
+        if: ${{ steps.open-pr.outputs.pull-request-number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          while true; do
+          if [[ $(gh pr view ${{ steps.open-pr.outputs.pull-request-number }}) == *MERGED* ]]; then
+            break
+          else
+            sleep 5
+          fi
+            done
