@@ -30,6 +30,16 @@ export default [
     algorithm: 'oidc',
   },
   {
+    name: 'mojeid',
+    identifier: 'https://mojeid.cz/oidc/',
+    algorithm: 'oidc',
+  },
+  {
+    name: 'paypal',
+    identifier: 'https://www.paypal.com',
+    algorithm: 'oidc',
+  },
+  {
     name: 'entra-common',
     identifier: 'https://login.microsoftonline.com/common/v2.0/',
     algorithm: 'oidc',
