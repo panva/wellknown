@@ -41,12 +41,14 @@ const pretty = (obj) => JSON.stringify(obj, null, 2)
 
 console.log('====', issuer.name, '====', nl(''))
 let commit = false
-const url = new URL(issuer.identifier)
 
-const response = await discoveryRequest(url, {
+const response = await discoveryRequest(new URL(issuer.identifier), {
   algorithm: issuer.algorithm,
 })
-const metadata = await processDiscoveryResponse(url, response)
+const metadata = await processDiscoveryResponse(
+  new URL(issuer.overwrites?.expectedIssuer ?? issuer.identifier),
+  response,
+)
 
 let jwks
 if (metadata.jwks_uri) {
@@ -82,7 +84,7 @@ ${description}
 # Usage
 
 \`\`\`js
-import * as ${issuer.name} from '@wellknowns/${issuer.name}'
+import * as ${issuer.name.replace(/[-_](.)/g, (_, c) => c.toUpperCase())} from '@wellknowns/${issuer.name}'
 
 console.log('${response.url}', ${issuer.name}.metadata)
 `
