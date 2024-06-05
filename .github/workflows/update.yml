@@ -2,13 +2,14 @@ name: Update
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
-  update:
+  get-issuers:
     runs-on: ubuntu-latest
     outputs:
-      updated: ${{ steps.collect.outputs.updated }}
-      cache-key: ${{ steps.collect.outputs.cache-key }}
+      names: ${{ steps.collect.outputs.names }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,35 +20,21 @@ jobs:
           node-version: 'lts/*'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run update script
-        run: node update.mjs
-
-      - name: Collect updated directories
+      - name: Collect issuers
         id: collect
         run: |
-          directories=$(git diff --name-only --staged | xargs -n1 dirname | sort -u)
-          json=$(echo "$directories" | jq -R . | jq -s 'map(select(length > 0))')
-          echo "updated=$(echo "$json" | jq -c)" >> "$GITHUB_OUTPUT"
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: updates
-          path: issuers
-          retention-days: 1
+          echo "names=$(node -e 'import("./lookup.mjs").then(({ default: issuers }) => console.log(JSON.stringify(issuers.map(i => i.name))))')" >> "$GITHUB_OUTPUT"
 
   prs:
-    if: ${{ needs.update.outputs.updated != '[]' }}
-    name: Update ${{ matrix.dir }}
+    name: Update ${{ matrix.name }}
+    needs:
+      - get-issuers
     runs-on: ubuntu-latest
-    needs: update
     continue-on-error: true
     strategy:
       max-parallel: 1
       matrix:
-        dir: ${{ fromJSON(needs.update.outputs.updated) }}
+        name: ${{ fromJSON(needs.get-issuers.outputs.names) }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -63,20 +50,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - uses: actions/download-artifact@v4
-        with:
-          name: updates
-          path: issuers
-          merge-multiple: true
+      - name: Run update script
+        run: node update.mjs ${{ matrix.name }}
 
       - uses: gr2m/create-or-update-pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: ${{ matrix.dir }}
-          title: Update ${{ matrix.dir }}
+          path: issuers/${{ matrix.name }}
+          title: Update issuers/${{ matrix.name }}
           body:
-          branch: update-${{ matrix.dir }}
-          commit-message: Update ${{ matrix.dir }}
+          branch: update-issuers/${{ matrix.name }}
+          commit-message: Update issuers/${{ matrix.name }}
           auto-merge: squash
           update-pull-request-title-and-body: false
