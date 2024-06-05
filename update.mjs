@@ -107,7 +107,7 @@ console.log('${response.url}', ${issuer.name}.metadata)
     const now = new Date()
     await writeFile(
       `${dir}/package.json`,
-      pretty({
+      nl(pretty({
         name: `@wellknowns/${issuer.name}`,
         version: [
           now.getUTCFullYear(),
@@ -129,11 +129,11 @@ console.log('${response.url}', ${issuer.name}.metadata)
         exports: {
           default: `./${issuer.name}.mjs`,
         },
-      }),
+      })),
     )
 
     if (commit) {
-      await $`git add --force ${dir}`
+      await $`git add ${dir}`
     } else {
       await $`git restore ${dir}`
     }
