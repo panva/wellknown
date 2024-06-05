@@ -57,4 +57,14 @@ export default [
       expectedIssuer: 'https://login.microsoftonline.com/{tenantid}/v2.0',
     },
   },
+  {
+    name: 'battle-net',
+    identifier: 'https://oauth.battle.net',
+    algorithm: 'oidc',
+  },
+  {
+    name: 'gitlab',
+    identifier: 'https://gitlab.com',
+    algorithm: 'oidc',
+  },
 ]
