@@ -30,12 +30,15 @@ jobs:
     name: Update ${{ matrix.name }}
     needs:
       - get-issuers
+
     runs-on: ubuntu-latest
     continue-on-error: true
+
     strategy:
       max-parallel: 1
       matrix:
         name: ${{ fromJSON(needs.get-issuers.outputs.names) }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -65,10 +68,13 @@ jobs:
           branch: update-issuers/${{ matrix.name }}
           update-pull-request-title-and-body: false
           commit-message: Update issuers/${{ matrix.name }}
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+
       - run: gh pr merge --auto --squash ${{ steps.open-pr.outputs.pull-request-number }}
         if: ${{ steps.open-pr.outputs.pull-request-number }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Check PR status
         if: ${{ steps.open-pr.outputs.pull-request-number }}
         env:
