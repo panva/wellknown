@@ -31,13 +31,12 @@ jobs:
             directories=$(git diff --name-only --staged | xargs -n1 dirname | sort -u)
             json=$(echo "$directories" | jq -R . | jq -s 'map(select(length > 0))')
             echo "updated=$(echo "$json" | jq -c)" >> "$GITHUB_OUTPUT"
-            echo "cache-key=issuers-${{ hashFiles('issuers/**/*') }}" >> $GITHUB_OUTPUT
 
-      - name: Cache updates
-        uses: actions/cache@v4
+      - uses: actions/upload-artifact@v4
         with:
+          name: updates
           path: issuers
-          key: ${{ steps.collect.outputs.cache-key }}
+          retention-days: 1
 
       - run: git status
 
@@ -51,6 +50,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -61,17 +62,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Load cached updates
-        uses: actions/cache@v4
+      - uses: actions/download-artifact@v4
         with:
+          name: updates
           path: issuers
-          key: ${{ needs.update.outputs.cache-key }}
-          fail-on-cache-miss: true
-
-      - run: git status
+          merge-multiple: true
 
       - uses: gr2m/create-or-update-pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path: ${{ matrix.dir }}
+          title: Update ${{ matrix.dir }}
+          body:
+          branch: update-${{ matrix.dir }}
+          commit-message: Update ${{ matrix.dir }}
+          auto-merge: squash
+          update-pull-request-title-and-body: false

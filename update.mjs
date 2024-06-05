@@ -133,7 +133,7 @@ console.log('${response.url}', ${issuer.name}.metadata)
     )
 
     if (commit) {
-      await $`git add --force ${dir}`
+      await $`git add ${dir}`
     } else {
       await $`git restore ${dir}`
     }
