@@ -2,8 +2,7 @@ import { mkdir, writeFile, readFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { parseArgs } from 'node:util'
 
-import { discoveryRequest, processDiscoveryResponse } from 'oauth4webapi'
-import { createRemoteJWKSet } from 'jose'
+import { discoveryRequest, processDiscoveryResponse, customFetch } from 'oauth4webapi'
 import objectHash from 'object-hash'
 import { $ } from 'execa'
 
@@ -44,6 +43,10 @@ let commit = false
 
 const response = await discoveryRequest(new URL(issuer.identifier), {
   algorithm: issuer.algorithm,
+  [customFetch](...args) {
+    args[1].redirect = 'follow'
+    return fetch(...args)
+  },
 })
 const metadata = await processDiscoveryResponse(
   new URL(issuer.overwrites?.expectedIssuer ?? issuer.identifier),
@@ -51,10 +54,10 @@ const metadata = await processDiscoveryResponse(
 )
 
 let jwks
+let jwksResposne
 if (metadata.jwks_uri) {
-  const remoteJwks = createRemoteJWKSet(new URL(metadata.jwks_uri))
-  await remoteJwks.reload()
-  jwks = remoteJwks.jwks()
+  jwksResposne = await fetch(metadata.jwks_uri)
+  jwks = await jwksResposne.json()
 }
 
 const dir = `issuers/${issuer.name}`
@@ -74,7 +77,7 @@ await writeFile(`${dir}/${issuer.name}.mjs`, mjs)
 let description = `Exports the JSON response from ${response.url}`
 if (jwks) {
   description = description.replace('response', 'responses')
-  description += ` and ${metadata.jwks_uri}`
+  description += ` and ${jwksResposne.url}`
 }
 
 let readme = `# Summary
@@ -90,7 +93,7 @@ console.log('${response.url}', ${issuer.name}.metadata)
 `
 
 if (jwks) {
-  readme += `console.log('${metadata.jwks_uri}', ${issuer.name}.jwks)`
+  readme += `console.log('${jwksResposne.url}', ${issuer.name}.jwks)`
 }
 readme += `
 \`\`\``

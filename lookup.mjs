@@ -5,6 +5,16 @@ export default [
     algorithm: 'oidc',
   },
   {
+    name: 'klarna',
+    identifier: 'https://login.klarna.com',
+    algorithm: 'oidc',
+  },
+  {
+    name: 'verimi',
+    identifier: 'https://web.verimi.de',
+    algorithm: 'oidc',
+  },
+  {
     name: 'apple',
     identifier: 'https://appleid.apple.com',
     algorithm: 'oidc',

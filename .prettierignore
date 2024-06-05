@@ -1,2 +1,2 @@
 # Ignore artifacts:
-issuers/*/*.mjs
+issuers/**/*
