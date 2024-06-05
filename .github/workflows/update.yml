@@ -66,16 +66,11 @@ jobs:
           update-pull-request-title-and-body: false
       - run: gh pr merge --auto --squash ${{ steps.open-pr.outputs.pull-request-number }}
       - name: Check PR status
-        timeout-minutes: 1
         run: |
-          while true;
-          do
-              if [
-                  [$(gh pr view ${{ steps.open-pr.outputs.pull-request-number }}) == * "MERGED" * ]
-              ];
-          then
-          break
+          while true; do
+          if [[ $(gh pr view ${{ steps.open-pr.outputs.pull-request-number }}) == *MERGED* ]]; then
+            break
           else
-              sleep 5
+            sleep 5
           fi
-          done
+            done
