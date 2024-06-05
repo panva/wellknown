@@ -7,6 +7,7 @@ on:
 
 jobs:
   get-issuers:
+    name: Get Issuers
     runs-on: ubuntu-latest
     outputs:
       names: ${{ steps.collect.outputs.names }}
