@@ -1,0 +1,23 @@
+{
+  "name": "@wellknowns/klarna",
+  "version": "2024.05.05",
+  "author": "Filip Skokan <panva.ip@gmail.com>",
+  "license": "MIT",
+  "funding": {
+    "url": "https://github.com/sponsors/panva"
+  },
+  "homepage": "https://github.com/panva/wellknowns/tree/main/issuers/klarna",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panva/wellknowns.git",
+    "directory": "issuers/klarna"
+  },
+  "type": "module",
+  "description": "Exports the JSON responses from https://login.klarna.com/.well-known/openid-configuration and https://login.klarna.com/eu/lp/idp/.well-known/jwks.json",
+  "files": [
+    "klarna.mjs"
+  ],
+  "exports": {
+    "default": "./klarna.mjs"
+  }
+}
