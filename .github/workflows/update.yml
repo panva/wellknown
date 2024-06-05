@@ -66,11 +66,11 @@ jobs:
           update-pull-request-title-and-body: false
           commit-message: Update issuers/${{ matrix.name }}
       - run: gh pr merge --auto --squash ${{ steps.open-pr.outputs.pull-request-number }}
-        if: ${{ steps.open-pr.outputs.pull-request-number != '' }}
+        if: ${{ steps.open-pr.outputs.pull-request-number }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check PR status
-        if: ${{ steps.open-pr.outputs.pull-request-number != '' }}
+        if: ${{ steps.open-pr.outputs.pull-request-number }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
