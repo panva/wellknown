@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'issuers/*/package.json'
+      - 'issuers/**/package.json'
 
 jobs:
   release:
