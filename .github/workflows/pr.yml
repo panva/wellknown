@@ -4,6 +4,7 @@ on:
   pull_request:
     branches: [main]
     types: [auto_merge_enabled]
+  workflow_dispatch:
 
 jobs:
   release:
