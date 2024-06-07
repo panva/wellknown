@@ -59,20 +59,28 @@ export const metadata = {
 export const jwks = {
   "keys": [
     {
-      "e": "AQAB",
       "alg": "RS256",
-      "n": "oAP5OnSzKfkEV2QMm2XCuu4G8VGRBOyhKg-4H04WzYzPqM_Tmqi60Vod96JTo7SfM0OoGeNnlkWNjjBWkSS66alNLrvTNLi0A-KGeBsZiIFmrbsP6HHJfFzPd0Mci7-e11fNKecZgbC1me9PtRXFZb9JprZGFOvBiMwU0rRvh0GWYmTFj1HFjOIMAwTGOKOVGNuPjv0b3V0YaAkUNklzi4MM6qgzUb0tE0so1Ii7kBe7roMScS2USPeeJkeoPjLEbQcrT8MxOSxH-JgPLfq-zOnEJ6ERW3mtXdZCNzqmVLn5yjX5lKr5E2vgkPAHx9NLZ09fo_L9woeX_5epl6cIkQ",
-      "kid": "6719678351a5faedc2e70274bbea62da2a8c4a12",
+      "use": "sig",
+      "kid": "674dbba8faee69acae1bc1be190453678f472803",
       "kty": "RSA",
-      "use": "sig"
+      "e": "AQAB",
+      "n": "w-l_VE4KNa22n4nsMwcabujowm924YoQQnwOz_dPYHmDI1O-r2bqw6mHmByXwii7aaeIMHJZWpmT5SkR3OYIu5RbSgiU-8JrQoplW_vZY2IqG1y5-frPC_9gnz_0qKKjtjqglCP-1AlfOdu7r5kOpkOACs5mWn4tm1K9R1EPjk2T_MMO7FkteZd8woh1fwUUuvbhPyDxBzx9EUsnGWbpTndOYc7W-EUk1jMtWBk3buLeaypVaOLWranK_XFrX-xx03BohrfinOqmftYgc0z94sxix7X1G36JZeh8-jpUhwyBPinBxOZOE_5kQn4CYM66Ygxwiws0ZJ-klG2qTi239w"
     },
     {
-      "n": "w-l_VE4KNa22n4nsMwcabujowm924YoQQnwOz_dPYHmDI1O-r2bqw6mHmByXwii7aaeIMHJZWpmT5SkR3OYIu5RbSgiU-8JrQoplW_vZY2IqG1y5-frPC_9gnz_0qKKjtjqglCP-1AlfOdu7r5kOpkOACs5mWn4tm1K9R1EPjk2T_MMO7FkteZd8woh1fwUUuvbhPyDxBzx9EUsnGWbpTndOYc7W-EUk1jMtWBk3buLeaypVaOLWranK_XFrX-xx03BohrfinOqmftYgc0z94sxix7X1G36JZeh8-jpUhwyBPinBxOZOE_5kQn4CYM66Ygxwiws0ZJ-klG2qTi239w",
-      "alg": "RS256",
-      "kid": "674dbba8faee69acae1bc1be190453678f472803",
+      "kid": "c3abe413b2268ae976458c82c15179547e97527e",
       "e": "AQAB",
       "use": "sig",
+      "alg": "RS256",
+      "n": "rr9RI_trqotRBIi9qTgoYPE4FnjvhIOoolHhi3Lxw3FqK-8vYwczsVEsTzVek3MAUdNNILhJozKN1Snirlrr_albKitJFJ1SbjJe2HsNeZu96TrWMNmWCCUOXK0ecEVdw8gqfGOE-_VvKaIVxYGaJpSystRjRXfrT8QHXNYMSI7xqJI9Obw4IUpwYxky6eVtB3zLW4Qz7cH2jFMsSB3uufdvOA-odJXrwZkC2FX0krVtSyCWzazjHMX0zOCckZVZK7xBNjuuElcnZ4IpGHcHDYtyI004WY-ez7_yxyOHGoJd31Omg39DkunpSQxfA87LLGumtd1OROvQzNFZETDqfw",
       "kty": "RSA"
+    },
+    {
+      "use": "sig",
+      "alg": "RS256",
+      "e": "AQAB",
+      "n": "oAP5OnSzKfkEV2QMm2XCuu4G8VGRBOyhKg-4H04WzYzPqM_Tmqi60Vod96JTo7SfM0OoGeNnlkWNjjBWkSS66alNLrvTNLi0A-KGeBsZiIFmrbsP6HHJfFzPd0Mci7-e11fNKecZgbC1me9PtRXFZb9JprZGFOvBiMwU0rRvh0GWYmTFj1HFjOIMAwTGOKOVGNuPjv0b3V0YaAkUNklzi4MM6qgzUb0tE0so1Ii7kBe7roMScS2USPeeJkeoPjLEbQcrT8MxOSxH-JgPLfq-zOnEJ6ERW3mtXdZCNzqmVLn5yjX5lKr5E2vgkPAHx9NLZ09fo_L9woeX_5epl6cIkQ",
+      "kty": "RSA",
+      "kid": "6719678351a5faedc2e70274bbea62da2a8c4a12"
     }
   ]
 }
