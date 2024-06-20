@@ -71,18 +71,6 @@ export const jwks = {
     {
       "kty": "RSA",
       "use": "sig",
-      "kid": "V1Y09OFMBXAZUFfJ-vWjlrH-ZSc",
-      "x5t": "V1Y09OFMBXAZUFfJ-vWjlrH-ZSc",
-      "n": "qinPWt_43NIzlluP8oLBaKXBHMJ0pZWNOu5yxCD_UZ7B5yrdMdzgFhr0cpDcp3vkkE97MyyIN3a2tg8UhHCtphkShbKiO36uNjc0TC-jVnhwI_mLZ1piP0gkItm26YTLw71rY9JpS2dY4CxnsHH6V8vsVaaQAGQByM6BdwUiep-7-Cn69iWybZkga_8gZAy9O1hOyBV22mKVRuWsLwLeBcahlOEGJeP4tx8vVSjKTX8tV2HJlL01JjxBojGdwtiqwr7iEOoUAwMhC9b80ASkSRcb-mU-SfGhmSP-DVgD1nXzFcu-v2bVDr4-OpLuOljzJVEz0r4W4tmf3KwToAQNcQ",
-      "e": "AQAB",
-      "x5c": [
-        "MIIC/TCCAeWgAwIBAgIIdZL3187SZ0EwDQYJKoZIhvcNAQELBQAwLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5ldDAeFw0yNDAzMDYyMTA4MDdaFw0yOTAzMDYyMTA4MDdaMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCqKc9a3/jc0jOWW4/ygsFopcEcwnSllY067nLEIP9RnsHnKt0x3OAWGvRykNyne+SQT3szLIg3dra2DxSEcK2mGRKFsqI7fq42NzRML6NWeHAj+YtnWmI/SCQi2bbphMvDvWtj0mlLZ1jgLGewcfpXy+xVppAAZAHIzoF3BSJ6n7v4Kfr2JbJtmSBr/yBkDL07WE7IFXbaYpVG5awvAt4FxqGU4QYl4/i3Hy9VKMpNfy1XYcmUvTUmPEGiMZ3C2KrCvuIQ6hQDAyEL1vzQBKRJFxv6ZT5J8aGZI/4NWAPWdfMVy76/ZtUOvj46ku46WPMlUTPSvhbi2Z/crBOgBA1xAgMBAAGjITAfMB0GA1UdDgQWBBQxCpcti/aMWYbvhjLCL5sKhcQ1pjANBgkqhkiG9w0BAQsFAAOCAQEAK+rZEgIu+e7ARr9IIYxMXSxJ9gy6Wnw0ZMtchoDvUufFmWnwHtj15zByNpaNRvojHWaWrfqQsk+bKzazPWXTOiM7yoLxKfzM4fYI3QP5TRizGvz5p4COLBiDB7XvOiFsm0SxJzhhba5+3J0CmDhsURfzhw7AX+OCL7arF5gPv4PMIQ8GiTlukVzWN7EhQ2DZbm74jVOYwTN74+ECynB/NZvprn0MOWmDMxD7ysi2Wv459tg1nGSMGkcIHOo2DSj18nm25QHzUjjbmkma36uw2lM/Lsjd0HsueD2nS+4eiVYqsuC4cDO/LvlRdMteuZLgvdqX35Xm608VGUPoDaFDUQ=="
-      ],
-      "issuer": "https://login.microsoftonline.com/{tenantid}/v2.0"
-    },
-    {
-      "kty": "RSA",
-      "use": "sig",
       "kid": "L1KfKFI_jnXbwWc22xZxw1sUHH0",
       "x5t": "L1KfKFI_jnXbwWc22xZxw1sUHH0",
       "n": "ojzOLoPAa8DykJWn0dz9vB_lPTkwtCyw1oR8WFpszoBaG-hKmBhYLCuyyOWIoIgmxETI5-bulQzsCTR79WWxq6sNxXPTlBy4i1ihjwhnD7CrgRu0U_O8GPzMMPlQXYs_C-tt0OdPPYEYv_ZzbNkgMTNaR5WWe-d3L4nDMWrSP70Sz-8_kcmA1qaap_MT_N9a5QidD20bfOvdXttNxu6_azAVN5UYeBevrTaJHO2HRVicw_zKwJSZV26jljpsmGMiNUu2anARS2C4KM_HCIfX7cwE9A89pJ1Uh58bBL98b1NDzGkt0hVCBTilPakhR4RHP0U9dvHFo3pUJd1Qrl9AQQ",
