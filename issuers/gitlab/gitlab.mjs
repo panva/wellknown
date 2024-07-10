@@ -39,6 +39,7 @@ export const metadata = {
     "authorization_code",
     "password",
     "client_credentials",
+    "device_code",
     "refresh_token"
   ],
   "token_endpoint_auth_methods_supported": [
