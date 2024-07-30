@@ -60,7 +60,10 @@ export const metadata = {
     "profile:national_id",
     "payment:request:create",
     "payment:recurring",
-    "payment:authorization:list"
+    "payment:authorization:list",
+    "customer:login",
+    "payment:customer_present",
+    "payment:customer_not_present"
   ],
   "token_endpoint_auth_methods_supported": [
     "client_secret_post",
