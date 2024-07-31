@@ -46,6 +46,14 @@ export const jwks = {
   "keys": [
     {
       "kty": "RSA",
+      "kid": "FftONTxoEg",
+      "use": "sig",
+      "alg": "RS256",
+      "n": "wio-SFzFvKKQ9vl5ctaYSi09o8k3Uh7r6Ht2eJv-hSaZ6A6xTXVIBVSm0KvPxaJlpjYPTCcl2sdEyXlD2Uh1khUKU7r9ON3rpN8pFHAere5ig_JGVEShxmt5E_jzMymYnSfkoSW44ulevQeUwP_MiC5VC1KJjTfD73ghX0tQ0-_RjTJJ2cLyFC4VFNboBMCVioUrz8IA3c0KIOl507qswQvMsh2vBTMDDSJfippAGLzUiWXxUlid-vyOC8GCtag61taSorxCw14irk-tsh7hWjDDkSTFn2gChPMfXXj10_lCv0UG29TVUVCAsay4pszzgmc4zwhgSsqQRd939BJexw",
+      "e": "AQAB"
+    },
+    {
+      "kty": "RSA",
       "kid": "T8tIJ1zSrO",
       "use": "sig",
       "alg": "RS256",
