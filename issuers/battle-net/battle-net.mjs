@@ -41,14 +41,6 @@ export const jwks = {
       "kty": "RSA",
       "e": "AQAB",
       "use": "sig",
-      "kid": "13922a42-46e9-4c46-be63-1c00b1a182d0",
-      "alg": "RS256",
-      "n": "AMUsXrM770ySxDSyVpsFDk52ChWCDNK1NhxN+b9ReF7qoOg43PVaP2VrUQVcPUx1b2Codfd6fRHF87xuxb5EHEYkAUNdPF6zad1GYsY2URvuMokAXQgOv4AEuNE6VT4xjKgZNi1krqR5LoZKFrZa+2TvUSkTdBZcOqnaQ7zKSGHNVtcmkgIHFwXWkY+CnnrVpRg75Jnb3c2i+BTm85Zgwr3cv1f4Apddr+bYl4PyxDj//3ybGPCm+7DZZ4bWzUxJZrTx587WNeWFekMG9d270y8YFgLv9avLC/bLsOSxaIS+YUKSB785t6dXgkIVloVX0esPl04QwXMxtthVRnvfIWM="
-    },
-    {
-      "kty": "RSA",
-      "e": "AQAB",
-      "use": "sig",
       "kid": "4db05322-9673-43ad-91c4-d5b4396cc7c8",
       "alg": "RS256",
       "n": "AM8ApIxupxFVDNfFC6bu79oNRejzHsJe96gi1Uf18XtZv2s9qotZGOfIRkEJmGMa8wFAyUdEmutuxZXxzy9jtgPC+G+MKzfK0+kF1cqiEUJVBazGRwZLE3qM/q9DzAKfwXvY9P97x0nKeYa5tX3mDHTB/5rSEOgIoMwzCgi9kKZtirXJhKli5JUFPby/kjSaEwAv1z9kgz2R3DZLQZCGTZM0vLYFjyuGDvbWDtqlzsc6cNG49noBJhhN5kfmMBufavp21TSSQQTwUw46GXo9p1p764wbitM8mY90aWB5UXkaUx7XPwN1ijGgW45ZSwkOFqUYXwLiF3uCb/trzt0BOV0="
