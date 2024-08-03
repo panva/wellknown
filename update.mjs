@@ -9,6 +9,8 @@ import { $ } from 'execa'
 
 import lookup from './lookup.mjs'
 
+const FORMAT_MAJOR_VERSION = 1
+
 const {
   positionals: [name],
 } = parseArgs({ allowPositionals: true })
@@ -120,17 +122,32 @@ if (!commit) {
 await writeFile(`${dir}/metadata-digest`, newMetadataDigest)
 await writeFile(`${dir}/jwks-digest`, newJwksDigest)
 
+let version = `${FORMAT_MAJOR_VERSION}.${[
+  now.getUTCFullYear(),
+  padSingleDigit(now.getUTCMonth()),
+  padSingleDigit(now.getUTCDate()),
+].join('')}.`
+
+let revision = 0
+const pkgjson = `${dir}/package.json`
+if (existsSync(pkgjson)) {
+  const { version: oldVersion } = JSON.parse(await readFile(pkgjson))
+
+  if (oldVersion.startsWith(version)) {
+    const oldRevision = parseInt(oldVersion.split('.')[2], 10)
+    revision = oldRevision + 1
+  }
+}
+
+version = `${version}${revision}`
+
 const now = new Date()
 await writeFile(
-  `${dir}/package.json`,
+  pkgjson,
   nl(
     pretty({
       name: `@wellknowns/${issuer.name}`,
-      version: [
-        now.getUTCFullYear(),
-        padSingleDigit(now.getUTCMonth()),
-        padSingleDigit(now.getUTCDate()),
-      ].join('.'),
+      version,
       author,
       license,
       funding,
