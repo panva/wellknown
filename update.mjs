@@ -122,6 +122,7 @@ if (!commit) {
 await writeFile(`${dir}/metadata-digest`, newMetadataDigest)
 await writeFile(`${dir}/jwks-digest`, newJwksDigest)
 
+const now = new Date()
 let version = `${FORMAT_MAJOR_VERSION}.${[
   now.getUTCFullYear(),
   padSingleDigit(now.getUTCMonth()),
@@ -141,7 +142,6 @@ if (existsSync(pkgjson)) {
 
 version = `${version}${revision}`
 
-const now = new Date()
 await writeFile(
   pkgjson,
   nl(
