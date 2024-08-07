@@ -25,7 +25,8 @@ export const metadata = {
     "read_service_ping",
     "openid",
     "profile",
-    "email"
+    "email",
+    "ai_workflows"
   ],
   "response_types_supported": [
     "code"
