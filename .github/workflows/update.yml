@@ -30,6 +30,8 @@ jobs:
     name: Update ${{ matrix.name }}
     needs:
       - get-issuers
+    permissions:
+      id-token: write
 
     runs-on: ubuntu-latest
     continue-on-error: true
@@ -50,12 +52,19 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: 'npm'
+          registry-url: https://registry.npmjs.org
+          always-auth: true
 
       - name: Install dependencies
         run: npm ci
 
       - name: Run update script
         run: node update.mjs ${{ matrix.name }}
+
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: ./issuers/${{ matrix.name }}
 
       - uses: gr2m/create-or-update-pull-request-action@v1
         id: open-pr
