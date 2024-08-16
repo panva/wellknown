@@ -1,0 +1,23 @@
+{
+  "name": "@wellknown/docker",
+  "version": "1.20240716.0",
+  "author": "Filip Skokan <panva.ip@gmail.com>",
+  "license": "MIT",
+  "funding": {
+    "url": "https://github.com/sponsors/panva"
+  },
+  "homepage": "https://github.com/panva/wellknown/tree/main/issuers/docker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panva/wellknown.git",
+    "directory": "issuers/docker"
+  },
+  "type": "module",
+  "description": "Exports the JSON responses from https://login.docker.com/.well-known/openid-configuration and https://login.docker.com/.well-known/jwks.json",
+  "files": [
+    "docker.mjs"
+  ],
+  "exports": {
+    "default": "./docker.mjs"
+  }
+}
