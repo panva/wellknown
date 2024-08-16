@@ -1,5 +1,5 @@
 > [!WARNING]
-> This is an experiment for now.
+> This is an experiment for now. Its purpose is to have a module that can be imported during builds for target environments which cannot keep context between invocations (e.g. Cloudflare Workers) where querying discovery and JWKS endpoints during every invocation would be detrimental to its performance. This can then be used instead of dynamic discovery and also as means to inject the JWKS into cache for e.g. https://github.com/panva/oauth4webapi or https://github.com/panva/jose
 
 This repository regularly queries and updates the current state of well-known public API responses from OAuth 2.0 and OIDC providers. These are kept up to date in the repository and published to npm under https://www.npmjs.com/org/wellknown.
 
