@@ -1,0 +1,23 @@
+{
+  "name": "@wellknown/verimi",
+  "version": "1.20240716.0",
+  "author": "Filip Skokan <panva.ip@gmail.com>",
+  "license": "MIT",
+  "funding": {
+    "url": "https://github.com/sponsors/panva"
+  },
+  "homepage": "https://github.com/panva/wellknown/tree/main/issuers/verimi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panva/wellknown.git",
+    "directory": "issuers/verimi"
+  },
+  "type": "module",
+  "description": "Exports the JSON responses from https://web.verimi.de/dipp/api/.well-known/openid-configuration and https://web.verimi.de/.well-known/jwks.json",
+  "files": [
+    "verimi.mjs"
+  ],
+  "exports": {
+    "default": "./verimi.mjs"
+  }
+}
