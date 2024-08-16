@@ -67,4 +67,29 @@ export default [
     identifier: 'https://gitlab.com',
     algorithm: 'oidc',
   },
+  {
+    name: 'docker',
+    identifier: 'https://login.docker.com/',
+    algorithm: 'oidc',
+  },
+  {
+    name: 'stackoverflow',
+    identifier: 'https://stackoverflow.com',
+    algorithm: 'oidc',
+  },
+  {
+    name: 'dropbox',
+    identifier: 'https://www.dropbox.com',
+    algorithm: 'oidc',
+  },
+  {
+    name: 'yahoo',
+    identifier: 'https://api.login.yahoo.com',
+    algorithm: 'oidc',
+  },
+  {
+    name: 'spotify',
+    identifier: 'https://accounts.spotify.com',
+    algorithm: 'oidc',
+  },
 ]
