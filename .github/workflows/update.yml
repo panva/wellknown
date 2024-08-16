@@ -32,6 +32,7 @@ jobs:
       - get-issuers
     permissions:
       id-token: write
+      contents: write
 
     runs-on: ubuntu-latest
     continue-on-error: true
