@@ -10,3 +10,5 @@ The update frequency is defined in the GitHub Actions workflow [update.yml](http
 The versioning scheme follows semver where the major version is currently set to 1, minor version is formed from the current date YYYYMMDD and patch version starts with 0 each day and if multiple updates per day are required, the patch version is incremented. Example: `1.20210902.0` would be the first update on September 2nd, 2021.
 
 The repository and npm package are only updated if the response from the API has changed.
+
+To add or update a provider, please [open an issue](https://github.com/panva/wellknown/issues/new) (not a PR) with the request, because of the automated nature PR notifications are muted on my end.
