@@ -61,11 +61,6 @@ jobs:
       - name: Run update script
         run: node update.mjs ${{ matrix.name }}
 
-      - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        working-directory: ./issuers/${{ matrix.name }}
-
       - uses: gr2m/create-or-update-pull-request-action@v1
         id: open-pr
         env:
@@ -96,3 +91,9 @@ jobs:
             sleep 5
           fi
             done
+
+      - run: npm publish --provenance --access public
+        if: ${{ steps.open-pr.outputs.pull-request-number }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: ./issuers/${{ matrix.name }}
