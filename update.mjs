@@ -10,6 +10,7 @@ import { $ } from 'execa'
 import lookup from './lookup.mjs'
 
 const FORMAT_MAJOR_VERSION = 1
+const FORCE_UPDATE_ALL = 0 // change this value to force npm publish with the next scheduled update action run
 
 const {
   positionals: [name],
@@ -22,11 +23,14 @@ if (!issuer) {
 }
 
 const hash = (obj) =>
-  objectHash(obj, {
-    algorithm: 'sha256',
-    respectType: false,
-    unorderedArrays: true,
-  })
+  objectHash(
+    { ...obj, FORCE_UPDATE_ALL },
+    {
+      algorithm: 'sha256',
+      respectType: false,
+      unorderedArrays: true,
+    },
+  )
 
 const padSingleDigit = (digit) => digit.toString().padStart(2, '0')
 
