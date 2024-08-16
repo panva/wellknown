@@ -94,7 +94,7 @@ jobs:
           fi
             done
 
-      - run: npm publish --provenance --access public
+      - run: npm publish --provenance --access public --scope wellknown
         if: ${{ steps.open-pr.outputs.pull-request-number }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
