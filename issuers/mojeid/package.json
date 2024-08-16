@@ -1,15 +1,15 @@
 {
-  "name": "@wellknowns/mojeid",
+  "name": "@wellknown/mojeid",
   "version": "1.20240629.0",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
     "url": "https://github.com/sponsors/panva"
   },
-  "homepage": "https://github.com/panva/wellknowns/tree/main/issuers/mojeid",
+  "homepage": "https://github.com/panva/wellknown/tree/main/issuers/mojeid",
   "repository": {
     "type": "git",
-    "url": "https://github.com/panva/wellknowns.git",
+    "url": "https://github.com/panva/wellknown.git",
     "directory": "issuers/mojeid"
   },
   "type": "module",

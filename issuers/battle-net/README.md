@@ -5,7 +5,7 @@ Exports the JSON responses from https://oauth.battle.net/.well-known/openid-conf
 # Usage
 
 ```js
-import * as battleNet from '@wellknowns/battle-net'
+import * as battleNet from '@wellknown/battle-net'
 
 console.log('https://oauth.battle.net/.well-known/openid-configuration', battleNet.metadata)
 console.log('https://oauth.battle.net/jwks/certs', battleNet.jwks)

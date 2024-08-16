@@ -5,7 +5,7 @@ Exports the JSON responses from https://id.twitch.tv/oauth2/.well-known/openid-c
 # Usage
 
 ```js
-import * as twitch from '@wellknowns/twitch'
+import * as twitch from '@wellknown/twitch'
 
 console.log('https://id.twitch.tv/oauth2/.well-known/openid-configuration', twitch.metadata)
 console.log('https://id.twitch.tv/oauth2/keys', twitch.jwks)

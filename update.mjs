@@ -91,7 +91,7 @@ ${description}
 # Usage
 
 \`\`\`js
-import * as ${safeIdentifier} from '@wellknowns/${issuer.name}'
+import * as ${safeIdentifier} from '@wellknown/${issuer.name}'
 
 console.log('${response.url}', ${safeIdentifier}.metadata)
 `
@@ -146,7 +146,7 @@ await writeFile(
   pkgjson,
   nl(
     pretty({
-      name: `@wellknowns/${issuer.name}`,
+      name: `@wellknown/${issuer.name}`,
       version,
       author,
       license,

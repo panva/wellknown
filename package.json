@@ -1,5 +1,5 @@
 {
-  "name": "wellknowns",
+  "name": "wellknown",
   "version": "1.0.0",
   "main": "index.js",
   "private": true,
@@ -7,8 +7,8 @@
     "format": "prettier . --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/panva/wellknowns",
-  "repository": "panva/wellknowns",
+  "homepage": "https://github.com/panva/wellknown",
+  "repository": "panva/wellknown",
   "funding": {
     "url": "https://github.com/sponsors/panva"
   },

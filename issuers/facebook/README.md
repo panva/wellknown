@@ -5,7 +5,7 @@ Exports the JSON responses from https://www.facebook.com/.well-known/openid-conf
 # Usage
 
 ```js
-import * as facebook from '@wellknowns/facebook'
+import * as facebook from '@wellknown/facebook'
 
 console.log('https://www.facebook.com/.well-known/openid-configuration', facebook.metadata)
 console.log('https://www.facebook.com/.well-known/oauth/openid/jwks/', facebook.jwks)

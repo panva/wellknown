@@ -5,7 +5,7 @@ Exports the JSON responses from https://mojeid.cz/oidc/.well-known/openid-config
 # Usage
 
 ```js
-import * as mojeid from '@wellknowns/mojeid'
+import * as mojeid from '@wellknown/mojeid'
 
 console.log('https://mojeid.cz/oidc/.well-known/openid-configuration', mojeid.metadata)
 console.log('https://mojeid.cz/oidc/key.jwk', mojeid.jwks)

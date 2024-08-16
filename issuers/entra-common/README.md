@@ -5,7 +5,7 @@ Exports the JSON responses from https://login.microsoftonline.com/common/v2.0/.w
 # Usage
 
 ```js
-import * as entraCommon from '@wellknowns/entra-common'
+import * as entraCommon from '@wellknown/entra-common'
 
 console.log('https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration', entraCommon.metadata)
 console.log('https://login.microsoftonline.com/common/discovery/v2.0/keys', entraCommon.jwks)

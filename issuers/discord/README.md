@@ -5,7 +5,7 @@ Exports the JSON responses from https://discord.com/.well-known/openid-configura
 # Usage
 
 ```js
-import * as discord from '@wellknowns/discord'
+import * as discord from '@wellknown/discord'
 
 console.log('https://discord.com/.well-known/openid-configuration', discord.metadata)
 console.log('https://discord.com/api/oauth2/keys', discord.jwks)

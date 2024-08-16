@@ -5,7 +5,7 @@ Exports the JSON responses from https://gitlab.com/.well-known/openid-configurat
 # Usage
 
 ```js
-import * as gitlab from '@wellknowns/gitlab'
+import * as gitlab from '@wellknown/gitlab'
 
 console.log('https://gitlab.com/.well-known/openid-configuration', gitlab.metadata)
 console.log('https://gitlab.com/oauth/discovery/keys', gitlab.jwks)
