@@ -53,7 +53,7 @@ export default [
     name: 'entra-common',
     identifier: 'https://login.microsoftonline.com/common/v2.0/',
     algorithm: 'oidc',
-    overwrites: {
+    overrides: {
       expectedIssuer: 'https://login.microsoftonline.com/{tenantid}/v2.0',
     },
   },

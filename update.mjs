@@ -52,7 +52,7 @@ const response = await discoveryRequest(new URL(issuer.identifier), {
   },
 })
 const metadata = await processDiscoveryResponse(
-  new URL(issuer.overwrites?.expectedIssuer ?? issuer.identifier),
+  new URL(issuer.overrides?.expectedIssuer ?? issuer.identifier),
   response,
 )
 
