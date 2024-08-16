@@ -73,11 +73,6 @@ export default [
     algorithm: 'oidc',
   },
   {
-    name: 'stackoverflow',
-    identifier: 'https://stackoverflow.com',
-    algorithm: 'oidc',
-  },
-  {
     name: 'dropbox',
     identifier: 'https://www.dropbox.com',
     algorithm: 'oidc',
