@@ -58,6 +58,8 @@ export const metadata = {
     "profile:phone",
     "profile:billing_address",
     "profile:national_id",
+    "profile:gender",
+    "personalization:interests",
     "payment:request:create",
     "payment:recurring",
     "payment:authorization:list",
