@@ -1,0 +1,23 @@
+{
+  "name": "@wellknown/entra-organizations",
+  "version": "1.20240827.0",
+  "author": "Filip Skokan <panva.ip@gmail.com>",
+  "license": "MIT",
+  "funding": {
+    "url": "https://github.com/sponsors/panva"
+  },
+  "homepage": "https://github.com/panva/wellknown/tree/main/issuers/entra-organizations",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panva/wellknown.git",
+    "directory": "issuers/entra-organizations"
+  },
+  "type": "module",
+  "description": "Exports the JSON responses from https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration and https://login.microsoftonline.com/organizations/discovery/v2.0/keys",
+  "files": [
+    "entra-organizations.mjs"
+  ],
+  "exports": {
+    "default": "./entra-organizations.mjs"
+  }
+}
