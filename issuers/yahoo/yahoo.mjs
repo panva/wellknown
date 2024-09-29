@@ -72,6 +72,14 @@ export const jwks = {
       "kty": "RSA",
       "alg": "RS256",
       "use": "sig",
+      "kid": "01640f903a24e1c1f097ebda2d09b196c9de3ed9",
+      "n": "APXkXeLRieppySH9dilwRSJjDW1MYOjSfqX8ifdXClRJiy6jsTlYcd2zDL6FPDeH6s2n_paJpnyEzzUTiSK-paC1yxdSAYPTT42tZqj5K5ZqBZgapYbPmbjEgCN80kPE66rGtRBkTehCAfAZ_CWFWX6yPDjpAMRkRWCDROdMoYm3",
+      "e": "AQAB"
+    },
+    {
+      "kty": "RSA",
+      "alg": "RS256",
+      "use": "sig",
       "kid": "6ff94cdad11e7c3ac08dc9ec3c44844b87e364f7",
       "n": "AL1LkSgnGk-sKqFDBrojoqvpqOwmN7tgvz0p6J9g8O_nOzXMAwzMUUs4H_FMgeNWcuE6XzJX3spVwAYBp-rBLwyXXCGbO_chhwcpBDNndlZyqS2zOvwmZYdh4MhrUnIOcA8cdDB1hqoDdKOx9M-EjuoafcgqEPA7rWsZTH6TITMP",
       "e": "AQAB"
