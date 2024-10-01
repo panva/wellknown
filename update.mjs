@@ -10,7 +10,7 @@ import { $ } from 'execa'
 import lookup from './lookup.mjs'
 
 const FORMAT_MAJOR_VERSION = 1
-const FORCE_UPDATE_ALL = 0 // change this value to force npm publish with the next scheduled update action run
+const FORCE_UPDATE_ALL = 1 // change this value to force npm publish with the next scheduled update action run
 
 const {
   positionals: [name],
@@ -163,13 +163,16 @@ await writeFile(
       },
       type: 'module',
       description,
-      files: [`${issuer.name}.mjs`],
+      files: [`${issuer.name}.mjs`, `./${issuer.name}.d.mts`],
       exports: {
+        types: `./${issuer.name}.d.mts`,
         default: `./${issuer.name}.mjs`,
       },
     }),
   ),
 )
+
+$`tsc ${dir}/${issuer.name}.mjs --declaration --allowJs --emitDeclarationOnly`
 
 if (commit) {
   await $`git add ${dir}`
