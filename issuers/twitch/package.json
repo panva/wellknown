@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/twitch",
-  "version": "1.20240716.0",
+  "version": "1.20240901.0",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -15,9 +15,11 @@
   "type": "module",
   "description": "Exports the JSON responses from https://id.twitch.tv/oauth2/.well-known/openid-configuration and https://id.twitch.tv/oauth2/keys",
   "files": [
-    "twitch.mjs"
+    "twitch.mjs",
+    "./twitch.d.mts"
   ],
   "exports": {
+    "types": "./twitch.d.mts",
     "default": "./twitch.mjs"
   }
 }

@@ -2,16 +2,16 @@ export const metadata = {
   "authorization_endpoint": "https://id.twitch.tv/oauth2/authorize",
   "claims_parameter_supported": true,
   "claims_supported": [
-    "sub",
     "azp",
-    "email",
     "email_verified",
-    "picture",
     "preferred_username",
     "aud",
     "exp",
     "iat",
     "iss",
+    "sub",
+    "email",
+    "picture",
     "updated_at"
   ],
   "id_token_signing_alg_values_supported": [
