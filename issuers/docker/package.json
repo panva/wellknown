@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/docker",
-  "version": "1.20240901.0",
+  "version": "1.20240901.1",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://login.docker.com/.well-known/openid-configuration and https://login.docker.com/.well-known/jwks.json",
   "files": [
     "docker.mjs",
-    "./docker.d.mts"
+    "docker.d.mts"
   ],
   "exports": {
     "types": "./docker.d.mts",
