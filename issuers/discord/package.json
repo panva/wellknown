@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/discord",
-  "version": "1.20240716.0",
+  "version": "1.20240901.0",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -15,9 +15,11 @@
   "type": "module",
   "description": "Exports the JSON responses from https://discord.com/.well-known/openid-configuration and https://discord.com/api/oauth2/keys",
   "files": [
-    "discord.mjs"
+    "discord.mjs",
+    "./discord.d.mts"
   ],
   "exports": {
+    "types": "./discord.d.mts",
     "default": "./discord.mjs"
   }
 }
