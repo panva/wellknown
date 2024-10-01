@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/apple",
-  "version": "1.20240901.0",
+  "version": "1.20240901.1",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://appleid.apple.com/.well-known/openid-configuration and https://appleid.apple.com/auth/keys",
   "files": [
     "apple.mjs",
-    "./apple.d.mts"
+    "apple.d.mts"
   ],
   "exports": {
     "types": "./apple.d.mts",
