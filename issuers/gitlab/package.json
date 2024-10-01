@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/gitlab",
-  "version": "1.20240901.0",
+  "version": "1.20240901.1",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://gitlab.com/.well-known/openid-configuration and https://gitlab.com/oauth/discovery/keys",
   "files": [
     "gitlab.mjs",
-    "./gitlab.d.mts"
+    "gitlab.d.mts"
   ],
   "exports": {
     "types": "./gitlab.d.mts",
