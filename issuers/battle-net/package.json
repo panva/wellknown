@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/battle-net",
-  "version": "1.20240824.0",
+  "version": "1.20240901.0",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -15,9 +15,11 @@
   "type": "module",
   "description": "Exports the JSON responses from https://oauth.battle.net/.well-known/openid-configuration and https://oauth.battle.net/jwks/certs",
   "files": [
-    "battle-net.mjs"
+    "battle-net.mjs",
+    "./battle-net.d.mts"
   ],
   "exports": {
+    "types": "./battle-net.d.mts",
     "default": "./battle-net.mjs"
   }
 }
