@@ -45,11 +45,6 @@ export const metadata = {
   "subject_types_supported": [
     "public"
   ],
-  "id_token_signing_alg_values_supported": [
-    "HS256",
-    "RS256",
-    "PS256"
-  ],
   "token_endpoint_auth_methods_supported": [
     "client_secret_basic",
     "client_secret_post",
@@ -75,6 +70,11 @@ export const metadata = {
   ],
   "request_uri_parameter_supported": false,
   "request_parameter_supported": false,
+  "id_token_signing_alg_values_supported": [
+    "HS256",
+    "RS256",
+    "PS256"
+  ],
   "token_endpoint_auth_signing_alg_values_supported": [
     "RS256",
     "RS384",
