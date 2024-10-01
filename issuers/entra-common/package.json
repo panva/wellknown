@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/entra-common",
-  "version": "1.20240901.3",
+  "version": "1.20240901.4",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration and https://login.microsoftonline.com/common/discovery/v2.0/keys",
   "files": [
     "entra-common.mjs",
-    "./entra-common.d.mts"
+    "entra-common.d.mts"
   ],
   "exports": {
     "types": "./entra-common.d.mts",
