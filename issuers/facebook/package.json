@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/facebook",
-  "version": "1.20240802.0",
+  "version": "1.20240901.0",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -15,9 +15,11 @@
   "type": "module",
   "description": "Exports the JSON responses from https://www.facebook.com/.well-known/openid-configuration and https://www.facebook.com/.well-known/oauth/openid/jwks/",
   "files": [
-    "facebook.mjs"
+    "facebook.mjs",
+    "./facebook.d.mts"
   ],
   "exports": {
+    "types": "./facebook.d.mts",
     "default": "./facebook.mjs"
   }
 }
