@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/entra-organizations",
-  "version": "1.20240901.2",
+  "version": "1.20240901.3",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration and https://login.microsoftonline.com/organizations/discovery/v2.0/keys",
   "files": [
     "entra-organizations.mjs",
-    "./entra-organizations.d.mts"
+    "entra-organizations.d.mts"
   ],
   "exports": {
     "types": "./entra-organizations.d.mts",
