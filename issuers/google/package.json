@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/google",
-  "version": "1.20240901.0",
+  "version": "1.20240901.1",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://accounts.google.com/.well-known/openid-configuration and https://www.googleapis.com/oauth2/v3/certs",
   "files": [
     "google.mjs",
-    "./google.d.mts"
+    "google.d.mts"
   ],
   "exports": {
     "types": "./google.d.mts",
