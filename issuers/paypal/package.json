@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/paypal",
-  "version": "1.20240901.0",
+  "version": "1.20240901.1",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://www.paypal.com/.well-known/openid-configuration and https://api.paypal.com/v1/oauth2/certs",
   "files": [
     "paypal.mjs",
-    "./paypal.d.mts"
+    "paypal.d.mts"
   ],
   "exports": {
     "types": "./paypal.d.mts",
