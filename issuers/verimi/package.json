@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/verimi",
-  "version": "1.20240716.0",
+  "version": "1.20240901.0",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -15,9 +15,11 @@
   "type": "module",
   "description": "Exports the JSON responses from https://web.verimi.de/dipp/api/.well-known/openid-configuration and https://web.verimi.de/.well-known/jwks.json",
   "files": [
-    "verimi.mjs"
+    "verimi.mjs",
+    "./verimi.d.mts"
   ],
   "exports": {
+    "types": "./verimi.d.mts",
     "default": "./verimi.mjs"
   }
 }
