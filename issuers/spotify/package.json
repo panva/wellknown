@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/spotify",
-  "version": "1.20240901.0",
+  "version": "1.20240901.1",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://accounts.spotify.com/.well-known/openid-configuration and https://accounts.spotify.com/oidc/certs/v1",
   "files": [
     "spotify.mjs",
-    "./spotify.d.mts"
+    "spotify.d.mts"
   ],
   "exports": {
     "types": "./spotify.d.mts",
