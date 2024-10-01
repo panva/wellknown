@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/dropbox",
-  "version": "1.20240901.0",
+  "version": "1.20240901.1",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://www.dropbox.com/.well-known/openid-configuration and https://www.dropbox.com/.well-known/jwks",
   "files": [
     "dropbox.mjs",
-    "./dropbox.d.mts"
+    "dropbox.d.mts"
   ],
   "exports": {
     "types": "./dropbox.d.mts",
