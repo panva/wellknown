@@ -1,0 +1,65 @@
+export namespace metadata {
+    let issuer: string;
+    let authorization_endpoint: string;
+    let registration_endpoint: string;
+    let token_endpoint: string;
+    let userinfo_endpoint: string;
+    let jwks_uri: string;
+    let revocation_endpoint: string;
+    let token_endpoint_auth_methods_supported: string[];
+    let response_types_supported: string[];
+    let response_modes_supported: string[];
+    let grant_types_supported: string[];
+    let subject_types_supported: string[];
+    let scopes_supported: string[];
+    let id_token_signing_alg_values_supported: string[];
+    let claims_supported: string[];
+    let code_challenge_methods_supported: string[];
+}
+export namespace jwks {
+    let keys: ({
+        kty: string;
+        alg: string;
+        use: string;
+        kid: string;
+        n: string;
+        e: string;
+        crv?: undefined;
+        x?: undefined;
+        y?: undefined;
+        acr?: undefined;
+    } | {
+        kty: string;
+        crv: string;
+        x: string;
+        y: string;
+        kid: string;
+        acr: string[];
+        alg?: undefined;
+        use?: undefined;
+        n?: undefined;
+        e?: undefined;
+    } | {
+        kty: string;
+        crv: string;
+        x: string;
+        kid: string;
+        alg?: undefined;
+        use?: undefined;
+        n?: undefined;
+        e?: undefined;
+        y?: undefined;
+        acr?: undefined;
+    } | {
+        kty: string;
+        crv: string;
+        x: string;
+        y: string;
+        kid: string;
+        alg?: undefined;
+        use?: undefined;
+        n?: undefined;
+        e?: undefined;
+        acr?: undefined;
+    })[];
+}
