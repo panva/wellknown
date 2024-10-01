@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/mojeid",
-  "version": "1.20240901.0",
+  "version": "1.20240901.1",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -16,7 +16,7 @@
   "description": "Exports the JSON responses from https://mojeid.cz/oidc/.well-known/openid-configuration and https://mojeid.cz/oidc/key.jwk",
   "files": [
     "mojeid.mjs",
-    "./mojeid.d.mts"
+    "mojeid.d.mts"
   ],
   "exports": {
     "types": "./mojeid.d.mts",
