@@ -1,6 +1,6 @@
 {
   "name": "@wellknown/yahoo",
-  "version": "1.20240829.1",
+  "version": "1.20240901.0",
   "author": "Filip Skokan <panva.ip@gmail.com>",
   "license": "MIT",
   "funding": {
@@ -15,9 +15,11 @@
   "type": "module",
   "description": "Exports the JSON responses from https://api.login.yahoo.com/.well-known/openid-configuration and https://api.login.yahoo.com/openid/v1/certs",
   "files": [
-    "yahoo.mjs"
+    "yahoo.mjs",
+    "./yahoo.d.mts"
   ],
   "exports": {
+    "types": "./yahoo.d.mts",
     "default": "./yahoo.mjs"
   }
 }
