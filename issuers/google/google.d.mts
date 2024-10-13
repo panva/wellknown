@@ -17,11 +17,11 @@ export namespace metadata {
 }
 export namespace jwks {
     let keys: {
+        e: string;
+        kid: string;
         alg: string;
         kty: string;
-        kid: string;
-        e: string;
-        n: string;
         use: string;
+        n: string;
     }[];
 }
