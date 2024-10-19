@@ -2,7 +2,7 @@ import { mkdir, writeFile, readFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { parseArgs } from 'node:util'
 
-import { discoveryRequest, processDiscoveryResponse, customFetch } from 'oauth4webapi'
+import { discovery, customFetch } from 'openid-client'
 import { createRemoteJWKSet } from 'jose'
 import objectHash from 'object-hash'
 import { $ } from 'execa'
@@ -48,17 +48,17 @@ const pretty = (obj) => JSON.stringify(obj, null, 2)
 console.log('====', issuer.name, '====', nl(''))
 let commit = false
 
-const response = await discoveryRequest(new URL(issuer.identifier), {
+let response
+const C = await discovery(new URL(issuer.identifier), 'decoy', undefined, undefined, {
   algorithm: issuer.algorithm,
-  [customFetch](...args) {
+  async [customFetch](...args) {
     args[1].redirect = 'follow'
-    return fetch(...args)
+    response = await fetch(...args)
+    return response
   },
 })
-const metadata = await processDiscoveryResponse(
-  new URL(issuer.overrides?.expectedIssuer ?? issuer.identifier),
-  response,
-)
+
+const metadata = C.serverMetadata()
 
 let jwks
 if (metadata.jwks_uri) {

@@ -51,19 +51,13 @@ export default [
   },
   {
     name: 'entra-common',
-    identifier: 'https://login.microsoftonline.com/common/v2.0/',
+    identifier: 'https://login.microsoftonline.com/common/v2.0',
     algorithm: 'oidc',
-    overrides: {
-      expectedIssuer: 'https://login.microsoftonline.com/{tenantid}/v2.0',
-    },
   },
   {
     name: 'entra-organizations',
-    identifier: 'https://login.microsoftonline.com/organizations/v2.0/',
+    identifier: 'https://login.microsoftonline.com/organizations/v2.0',
     algorithm: 'oidc',
-    overrides: {
-      expectedIssuer: 'https://login.microsoftonline.com/{tenantid}/v2.0',
-    },
   },
   {
     name: 'battle-net',
