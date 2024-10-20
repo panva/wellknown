@@ -65,6 +65,9 @@ if (metadata.jwks_uri) {
   const remoteJwks = createRemoteJWKSet(new URL(metadata.jwks_uri))
   await remoteJwks.reload()
   jwks = remoteJwks.jwks()
+  for (const key of jwks.keys) {
+    delete key.cloud_instance_name
+  }
 }
 
 const dir = `issuers/${issuer.name}`
