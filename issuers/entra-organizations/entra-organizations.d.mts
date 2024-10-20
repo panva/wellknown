@@ -32,6 +32,7 @@ export namespace jwks {
         n: string;
         e: string;
         x5c: string[];
+        cloud_instance_name: string;
         issuer: string;
     }[];
 }
