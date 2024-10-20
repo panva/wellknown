@@ -1,0 +1,25 @@
+{
+  "name": "@wellknown/lego",
+  "version": "1.20240920.0",
+  "author": "Filip Skokan <panva.ip@gmail.com>",
+  "license": "MIT",
+  "funding": {
+    "url": "https://github.com/sponsors/panva"
+  },
+  "homepage": "https://github.com/panva/wellknown/tree/main/issuers/lego",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panva/wellknown.git",
+    "directory": "issuers/lego"
+  },
+  "type": "module",
+  "description": "Exports the JSON responses from https://identity.lego.com/.well-known/openid-configuration and https://identity.lego.com/.well-known/openid-configuration/jwks",
+  "files": [
+    "lego.mjs",
+    "lego.d.mts"
+  ],
+  "exports": {
+    "types": "./lego.d.mts",
+    "default": "./lego.mjs"
+  }
+}
