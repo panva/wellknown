@@ -89,4 +89,9 @@ export default [
     identifier: 'https://accounts.spotify.com',
     algorithm: 'oidc',
   },
+  {
+    name: 'lego',
+    identifier: 'https://identity.lego.com',
+    algorithm: 'oidc',
+  },
 ]
