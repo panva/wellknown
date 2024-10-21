@@ -21,7 +21,7 @@ export namespace jwks {
         use: string;
         kty: string;
         e: string;
-        kid: string;
         n: string;
+        kid: string;
     }[];
 }
