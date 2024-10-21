@@ -5,7 +5,7 @@ concurrency: 1
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *' # every 5 minutes
+    - cron: '*/15 * * * *' # every 15 minutes
 
 jobs:
   get-issuers:
