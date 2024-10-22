@@ -65,7 +65,7 @@ jobs:
       - name: Run update script
         run: node update.mjs ${{ matrix.name }}
 
-      - uses: gr2m/create-or-update-pull-request-action@v1
+      - uses: gr2m/create-or-update-pull-request-action@3f93751a1b819201ffa9c2a80a40e57ce8060bf7
         id: open-pr
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
